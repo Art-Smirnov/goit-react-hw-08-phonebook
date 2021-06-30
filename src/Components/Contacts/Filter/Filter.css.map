@@ -3,10 +3,10 @@
     "mappings": "AAEA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,KAAK;EAEd,aAAa,EAAE,IAAI;CACpB",
     "sources": [
         "Filter.scss",
-        "../../styles/shared.scss",
-        "../../styles/_variables.scss",
-        "../../styles/_colors.scss",
-        "../../styles/_placeholders.scss"
+        "../../../styles/shared.scss",
+        "../../../styles/_variables.scss",
+        "../../../styles/_colors.scss",
+        "../../../styles/_placeholders.scss"
     ],
     "names": [],
     "file": "Filter.css"

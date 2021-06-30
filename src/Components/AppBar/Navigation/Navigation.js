@@ -8,7 +8,7 @@ const Navigation = () => (
     </NavLink>
 
     <NavLink to="/contacts" exact>
-      Заметки
+      Контакты
     </NavLink>
   </nav>
 );

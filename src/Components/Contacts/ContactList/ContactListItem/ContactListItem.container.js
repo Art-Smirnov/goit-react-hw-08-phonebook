@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import ContactListItem from './ContactListItem';
-import { contactsOperations, contactsSelectors } from '../../../redux/contacts';
+import {
+  contactsOperations,
+  contactsSelectors,
+} from '../../../../redux/contacts';
 
 const mapStateToProps = state => ({
   contacts: contactsSelectors.getVisibleContacts(state),
