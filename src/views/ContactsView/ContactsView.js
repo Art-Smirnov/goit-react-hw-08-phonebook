@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
-import Container from '../Container';
-import Spiner from '../Spiner';
+import Container from '../../Components/Container';
+import Spiner from '../../Components/Spiner';
 import { contactsOperations, contactsSelectors } from '../../redux/contacts';
 
-class Contacts extends Component {
+class ContactsView extends Component {
   componentDidMount() {
     this.props.fetchContacts();
   }
@@ -36,4 +36,4 @@ const mapDispatchToProps = dispatch => ({
   fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactsView);

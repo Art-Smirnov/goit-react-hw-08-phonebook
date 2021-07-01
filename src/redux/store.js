@@ -15,7 +15,6 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { contactsReducer } from './contacts';
 import { authReducer } from './auth';
-// import persistStore from 'redux-persist/es/persistStore';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -43,4 +42,5 @@ const store = configureStore({
 
 const persistor = persistStore(store);
 
+// eslint-disable-next-line
 export default { store, persistor };

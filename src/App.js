@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { Component, Suspense, lazy } from 'react';
+import { Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import AppBar from './Components/AppBar';
-import RegisterView from './views/RegisterView';
-import LoginView from './views/LoginView';
-import Contacts from './Components/Contacts/';
 import Container from './Components/Container';
 import routes from './routes';
 import { authOperations } from './redux/auth';
+import PrivateRoute from './Components/PrivateRoute';
+import PublicRoute from './Components/PublicRoute';
+
+const HomeView = lazy(() => import('./views/HomeView'));
+const RegisterView = lazy(() => import('./views/RegisterView'));
+const LoginView = lazy(() => import('./views/LoginView'));
+const ContactsView = lazy(() => import('./views/ContactsView'));
 
 class App extends Component {
   componentDidMount() {
@@ -19,11 +23,28 @@ class App extends Component {
     return (
       <Container>
         <AppBar />
-        <Switch>
-          <Route path={routes.register} component={RegisterView} />
-          <Route path={routes.login} component={LoginView} />
-          <Route path={routes.contacts} component={Contacts} />
-        </Switch>
+        <Suspense fallback={<p>Загружаем...</p>}>
+          <Switch>
+            <PublicRoute exact path={routes.home} component={HomeView} />
+            <PublicRoute
+              path={routes.register}
+              restricted
+              component={RegisterView}
+              redirectTo="/contacts"
+            />
+            <PublicRoute
+              path={routes.login}
+              restricted
+              component={LoginView}
+              redirectTo="/contacts"
+            />
+            <PrivateRoute
+              path={routes.contacts}
+              component={ContactsView}
+              redirectTo="/login"
+            />
+          </Switch>
+        </Suspense>
       </Container>
     );
   }

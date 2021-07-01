@@ -1,16 +1,21 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const Navigation = () => (
+const Navigation = ({ isAuthenticated }) => (
   <nav>
     <NavLink to="/" exact>
-      Главная
+      Home
     </NavLink>
-
-    <NavLink to="/contacts" exact>
-      Контакты
-    </NavLink>
+    {isAuthenticated && (
+      <NavLink to="/contacts" exact>
+        Contacts
+      </NavLink>
+    )}
   </nav>
 );
+
+Navigation.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+};
 
 export default Navigation;
