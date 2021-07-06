@@ -1,27 +1,14 @@
 import React from 'react';
+import { Navbar, Button } from 'react-bootstrap';
 
-const styles = {
-  container: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  avatar: {
-    marginRight: 4,
-  },
-  name: {
-    fontWeight: 700,
-    marginRight: 12,
-  },
-};
-
-const UserMenu = ({ avatar, name, onLogout }) => (
-  <div style={styles.container}>
-    <img src={avatar} alt="" width="32" height="32" style={styles.avatar} />
-    <span style={styles.name}>Welcome, {name}</span>
-    <button type="button" onClick={onLogout}>
+const UserMenu = ({ Avatar, name, onLogout }) => (
+  <>
+    <Avatar style={{ color: 'grey' }} className="me-2" />
+    <Navbar.Text className="me-2">Welcome, {name}</Navbar.Text>
+    <Button size="sm" variant="outline-secondary" onClick={onLogout}>
       Logout
-    </button>
-  </div>
+    </Button>{' '}
+  </>
 );
 
 export default UserMenu;

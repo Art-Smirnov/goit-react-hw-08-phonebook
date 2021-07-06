@@ -16,7 +16,7 @@
   text-align: center;
 }
 
-.ContactForm {
+.form {
   width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,7 +31,8 @@
   margin-bottom: 40px;
 }
 
-.ContactForm__input {
+.input {
+  min-width: 100%;
   margin-bottom: 20px;
 }
-/*# sourceMappingURL=ContactForm.css.map */
+/*# sourceMappingURL=ContactForm.module.css.map */

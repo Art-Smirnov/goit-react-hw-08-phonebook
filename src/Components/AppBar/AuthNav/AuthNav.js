@@ -1,15 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
+import routes from '../../../routes';
 
 const AuthNav = () => (
-  <div>
-    <NavLink to="/register" exact>
-      Регистрация
-    </NavLink>
-    <NavLink to="/login" exact>
-      Логин
-    </NavLink>
-  </div>
+  <Nav>
+    <Nav.Link className="me-2" to={routes.register} as={NavLink}>
+      Register
+    </Nav.Link>
+    <Nav.Link to={routes.login} as={NavLink}>
+      Login
+    </Nav.Link>
+  </Nav>
 );
 
 export default AuthNav;

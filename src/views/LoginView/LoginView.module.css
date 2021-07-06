@@ -12,12 +12,17 @@
   align-items: center;
 }
 
-.form__title {
+.title {
+  margin-top: 40px;
   text-align: center;
 }
 
-.Filter__input {
-  min-width: 400px;
-  margin-bottom: 20px;
+.input {
+  margin-bottom: 15px;
+  width: 250px;
 }
-/*# sourceMappingURL=Filter.css.map */
+
+.btn {
+  max-width: 100px;
+}
+/*# sourceMappingURL=LoginView.module.css.map */

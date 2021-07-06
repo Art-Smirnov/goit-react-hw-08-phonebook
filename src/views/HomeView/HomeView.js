@@ -1,8 +1,3 @@
-import Container from '../../Components/Container';
-const HomeView = () => (
-  <Container>
-    <h1>Home Page</h1>
-  </Container>
-);
+const HomeView = () => <h1>Home Page</h1>;
 
 export default HomeView;

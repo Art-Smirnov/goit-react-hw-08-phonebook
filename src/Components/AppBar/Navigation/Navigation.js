@@ -1,21 +1,18 @@
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Nav } from 'react-bootstrap';
 
 const Navigation = ({ isAuthenticated }) => (
-  <nav>
-    <NavLink to="/" exact>
+  <Nav className="me-auto">
+    <Nav.Link exact to="/" as={NavLink}>
       Home
-    </NavLink>
-    {isAuthenticated && (
-      <NavLink to="/contacts" exact>
-        Contacts
-      </NavLink>
-    )}
-  </nav>
-);
+    </Nav.Link>
 
-Navigation.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-};
+    {isAuthenticated && (
+      <Nav.Link to="/contacts" as={NavLink}>
+        Contacts
+      </Nav.Link>
+    )}
+  </Nav>
+);
 
 export default Navigation;

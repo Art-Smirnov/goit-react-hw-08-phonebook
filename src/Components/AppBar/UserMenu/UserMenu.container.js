@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { authSelectors, authOperations } from '../../../redux/auth';
-import defaultAvatar from './default-avatar.png';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import UserMenu from './UserMenu';
 
 const mapStateToProps = state => ({
   name: authSelectors.getUserName(state),
-  avatar: defaultAvatar,
+  Avatar: AccountCircleIcon,
 });
 
 const mapDispatchToProps = {

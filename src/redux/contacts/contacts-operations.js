@@ -11,8 +11,6 @@ import {
   deleteContactError,
 } from './contacts-actions';
 
-// import { createAsyncThunk } from '@reduxjs/toolkit';
-
 const fetchContacts = () => async dispatch => {
   dispatch(fetchContactsRequest());
 
@@ -23,15 +21,6 @@ const fetchContacts = () => async dispatch => {
     dispatch(fetchContactsError(error.message));
   }
 };
-
-// const fetchAsyncContacts = createAsyncThunk(
-//   'contacts/fetchContacts',
-//   async () => {
-//     const { data } = await axios.get('/contacts');
-//     // Inferred return type: Promise<MyData>
-//     return data;
-//   },
-// );
 
 const addContact = contact => async dispatch => {
   dispatch(addContactRequest());

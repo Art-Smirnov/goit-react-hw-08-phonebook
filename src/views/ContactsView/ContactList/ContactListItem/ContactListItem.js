@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Button } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import './ContactListItem.scss';
 
@@ -9,27 +10,16 @@ const ContactListItem = ({ contacts, onDelete }) =>
       <span className="ContactListItem__data">
         {name}: {number}
       </span>
-
-      <button
-        className="delete__btn"
+      <Button
+        startIcon={<DeleteIcon />}
+        variant="contained"
+        color="secondary"
+        type="submit"
         onClick={() => onDelete(id)}
-        type="button"
       >
-        Delete
-      </button>
+        DELETE
+      </Button>
     </li>
   ));
-
-ContactListItem.propTypes = {
-  onDelete: PropTypes.func.isRequired,
-
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-};
 
 export default ContactListItem;
