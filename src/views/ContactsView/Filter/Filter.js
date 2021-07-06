@@ -1,12 +1,17 @@
 import React from 'react';
 
-import { TextField } from '@material-ui/core';
+import { TextField, withStyles } from '@material-ui/core';
 
-import styles from './Filter.module.scss';
+const stylesMI = {
+  input: {
+    minWidth: 400,
+    marginBottom: 20,
+  },
+};
 
-const Filter = ({ value, onChange }) => (
+const Filter = ({ value, onChange, classes }) => (
   <TextField
-    className={styles.input}
+    className={classes.input}
     id="standard-basic"
     label="Find your contacts by name"
     type="text"
@@ -15,4 +20,4 @@ const Filter = ({ value, onChange }) => (
   />
 );
 
-export default Filter;
+export default withStyles(stylesMI)(Filter);

@@ -41,6 +41,7 @@ class LoginView extends Component {
             name="email"
             value={email}
             onChange={this.handleChange}
+            required
           />
           <TextField
             className={classes.input}
@@ -49,6 +50,7 @@ class LoginView extends Component {
             name="password"
             value={password}
             onChange={this.handleChange}
+            required
           />
 
           <Button variant="outlined" type="submit">

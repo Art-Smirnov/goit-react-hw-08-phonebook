@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, withStyles } from '@material-ui/core';
 import style from './ContactForm.module.scss';
+
+const stylesMI = {
+  input: {
+    marginBottom: 25,
+    minWidth: 350,
+  },
+};
 
 class ContactForm extends Component {
   state = {
@@ -29,10 +36,11 @@ class ContactForm extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
       <form className={style.form} onSubmit={this.handleSubmit}>
         <TextField
-          className={style.input}
+          className={classes.input}
           label="Name"
           onChange={this.onInputChange}
           value={this.state.name}
@@ -44,7 +52,7 @@ class ContactForm extends Component {
         />
 
         <TextField
-          className={style.input}
+          className={classes.input}
           label="Number"
           onChange={this.onInputChange}
           value={this.state.number}
@@ -67,4 +75,4 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+export default withStyles(stylesMI)(ContactForm);

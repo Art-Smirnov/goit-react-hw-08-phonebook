@@ -44,6 +44,7 @@ class RegisterView extends Component {
             name="name"
             value={name}
             onChange={this.handleChange}
+            required
           />
 
           <TextField
@@ -53,6 +54,7 @@ class RegisterView extends Component {
             name="email"
             value={email}
             onChange={this.handleChange}
+            required
           />
 
           <TextField
@@ -62,6 +64,7 @@ class RegisterView extends Component {
             name="password"
             value={password}
             onChange={this.handleChange}
+            required
           />
 
           <Button variant="outlined" type="submit">
